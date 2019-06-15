@@ -110,7 +110,7 @@ workflows:
             - install
       - lint:
           requires:
-            - install
+            - build
       - test:
           requires:
             - build
