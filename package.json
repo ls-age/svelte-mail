@@ -22,11 +22,8 @@
   ],
   "types": "out/types/index.d.ts",
   "dependencies": {
-    "esm": "^3.2.25",
     "html-to-text": "^5.1.1",
-    "juice": "^5.2.0",
-    "nodemailer": "^6.1.1",
-    "opn": "^6.0.0"
+    "juice": "^5.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.4",
