@@ -1,0 +1,126 @@
+version: 2
+
+defaults: &defaults
+  docker:
+    - image: circleci/node:10
+
+git-login: &git-login
+  name: Setting up git user
+  command: git config --global user.email ci@ls-age.com && git config --global user.name "ls-age CI"
+
+npm-login: &npm-login
+  name: Logging in to npm
+  command: echo "$NPM_TOKEN" > ~/.npmrc
+
+jobs:
+  install:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v2-npm-deps-{{ checksum "package-lock.json" }}
+            - v2-npm-deps
+      - run:
+          name: Installing npm dependencies
+          command: npm ci
+      - save_cache:
+          key: v2-npm-deps-{{ checksum "package-lock.json" }}
+          paths:
+            - ~/.npm
+            - ~/.cache
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+
+  build:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: .
+      - run:
+          name: Bundle module
+          command: npm run compile
+      - run:
+          name: Generate type definitions
+          command: npm run types
+          when: always
+      - persist_to_workspace:
+          root: .
+          paths:
+            - out
+            - __tests__/fixtures/templates
+
+  lint:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: .
+      - run:
+          name: Run Prettier
+          command: npm run format -- --check
+      - run:
+          name: Run ESLint
+          command: npm run lint -- --format junit --output-file ~/reports/eslint.xml
+          when: always
+      - store_test_results:
+          path: ~/reports
+      - store_artifacts:
+          path: ~/reports
+
+  test:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: .
+      - run:
+          name: Run tests
+          command: npm run test -- --ci --runInBand --reporters=default --reporters=jest-junit
+          environment:
+            JEST_JUNIT_OUTPUT: ~/reports/jest.xml
+      - store_test_results:
+          path: ~/reports
+      - store_artifacts:
+          path: ~/reports
+
+  deploy:
+    <<: *defaults
+    steps:
+      - checkout
+      - add_ssh_keys
+      - attach_workspace:
+          at: .
+      - run:
+          <<: *git-login
+      - run:
+          <<: *npm-login
+      - run:
+          name: Deploying changes
+          command: npx @ls-age/bump-version release --gh-token $RELEASE_GITHUB_TOKEN
+
+workflows:
+  version: 2
+
+  build-test-deploy:
+    jobs:
+      - install
+      - build:
+          requires:
+            - install
+      - lint:
+          requires:
+            - install-deps
+      - test:
+          requires:
+            - build
+      - deploy:
+          requires:
+            - build
+            - lint
+            - test
+          filters:
+            branches:
+              only:
+                - master
+                - beta
