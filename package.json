@@ -1,10 +1,24 @@
 {
   "name": "svelte-mail",
   "version": "0.0.0",
-  "description": "Render svelte compontent to emails",
+  "description": "Renders Svelte components for emails: Inlines styles and renders additional plain text version",
   "license": "MIT",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ls-age/svelte-mail.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ls-age/svelte-mail/issues"
+  },
+  "homepage": "https://github.com/ls-age/svelte-mail#readme",
   "author": "Lukas Hechenberger <npm@ls-age.com>",
+  "keywords": [
+    "svelte",
+    "email",
+    "mail",
+    "inline"
+  ],
   "main": "out/index.js",
   "module": "out/es/index.js",
   "scripts": {
@@ -14,12 +28,6 @@
     "test": "jest --testPathIgnorePatterns=__tests__/fixtures/templates",
     "types": "tsc --emitDeclarationOnly"
   },
-  "keywords": [
-    "svelte",
-    "email",
-    "mail",
-    "inline"
-  ],
   "types": "out/types/index.d.ts",
   "dependencies": {
     "html-to-text": "^5.1.1",

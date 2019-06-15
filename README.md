@@ -2,6 +2,8 @@
 
 > Renders [Svelte](https://svelte.dev) components for emails. Inlines styles and renders additional plain text version.
 
+[![CircleCI](https://circleci.com/gh/ls-age/svelte-mail/tree/master.svg?style=svg)](https://circleci.com/gh/ls-age/svelte-mail/tree/master)
+
 ## Installation
 
 Run `npm i --save svelte-mail`.
