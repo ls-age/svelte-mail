@@ -8,14 +8,9 @@ const extensions = ['.mjs', '.js', '.json', '.ts'];
 
 export default [
   {
-    input: [
-      './src/index.ts',
-    ],
+    input: ['./src/index.ts'],
     external: builtinModules.concat(Object.keys(dependencies)),
-    plugins: [
-      resolve({ extensions }),
-      babel({ extensions, include: 'src/**/*' }),
-    ],
+    plugins: [resolve({ extensions }), babel({ extensions, include: 'src/**/*' })],
     output: [
       {
         format: 'cjs',
