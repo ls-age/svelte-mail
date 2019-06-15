@@ -47,8 +47,6 @@ sendMail()
 
 ## Options
 
-This module uses only a
-
 Internally, this module uses [juice](https://www.npmjs.com/package/juice) to inline styles and [html-to-text](https://www.npmjs.com/package/html-to-text) to render plain text messages. All options passed to the *renderMail* function will be passed to them:
 
 ```javascript
