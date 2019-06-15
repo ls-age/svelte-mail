@@ -1,0 +1,7 @@
+{
+  "extends": ["@ls-age", "plugin:jest/recommended", "prettier"],
+  "plugins": ["jest"],
+  "env": {
+    "jest": true
+  }
+}

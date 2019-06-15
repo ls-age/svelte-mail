@@ -1,0 +1,14 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "@ls-age",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/typescript",
+    "prettier",
+    "prettier/@typescript-eslint"
+  ],
+  "rules": {
+    "compat/compat": "off",
+    "@typescript-eslint/explicit-function-return-type": [2, { "allowExpressions": true }]
+  }
+}

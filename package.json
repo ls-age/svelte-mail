@@ -1,0 +1,52 @@
+{
+  "name": "svelte-mail",
+  "version": "0.0.0",
+  "description": "Render svelte compontent to emails",
+  "license": "MIT",
+  "private": true,
+  "author": "Lukas Hechenberger <npm@ls-age.com>",
+  "main": "out/index.js",
+  "module": "out/es/index.js",
+  "scripts": {
+    "compile": "rollup -c",
+    "format": "prettier \"**/*.{js,ts,json,yml}\" \"!package-lock.json\" \"!out/**/*\" \"!__tests__/fixtures/templates/*.js\"",
+    "lint": "eslint rollup.config.js src __tests__ --ext .js,.ts",
+    "test": "jest --testPathIgnorePatterns=__tests__/fixtures/templates",
+    "types": "tsc --emitDeclarationOnly"
+  },
+  "keywords": [
+    "svelte",
+    "email",
+    "mail",
+    "inline"
+  ],
+  "types": "out/types/index.d.ts",
+  "dependencies": {
+    "esm": "^3.2.25",
+    "html-to-text": "^5.1.1",
+    "juice": "^5.2.0",
+    "nodemailer": "^6.1.1",
+    "opn": "^6.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/preset-typescript": "^7.3.3",
+    "@ls-age/bump-version": "^0.2.0",
+    "@ls-age/eslint-config": "^0.9.0",
+    "@types/html-to-text": "^1.4.31",
+    "@typescript-eslint/eslint-plugin": "^1.9.0",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^5.0.0",
+    "eslint-plugin-jest": "^22.6.4",
+    "jest": "^24.8.0",
+    "jest-junit": "^6.4.0",
+    "prettier": "^1.18.2",
+    "rollup": "^1.12.1",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-node-resolve": "^5.0.0",
+    "rollup-plugin-svelte": "^5.0.3",
+    "svelte": "^3.4.1",
+    "typescript": "^3.4.5"
+  }
+}
