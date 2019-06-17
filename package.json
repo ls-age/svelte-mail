@@ -1,6 +1,6 @@
 {
   "name": "svelte-mail",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Renders Svelte components for emails: Inlines styles and renders additional plain text version",
   "license": "MIT",
   "repository": {
