@@ -43,7 +43,7 @@
     "@typescript-eslint/parser": "2.30.0",
     "eslint": "5.16.0",
     "eslint-config-prettier": "6.11.0",
-    "eslint-plugin-jest": "23.8.2",
+    "eslint-plugin-jest": "23.9.0",
     "jest": "25.5.4",
     "jest-junit": "10.0.0",
     "prettier": "2.0.5",
