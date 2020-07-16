@@ -52,7 +52,7 @@
     "rollup-plugin-node-resolve": "5.2.0",
     "rollup-plugin-svelte": "5.2.3",
     "svelte": "3.24.0",
-    "typescript": "3.9.6"
+    "typescript": "3.9.7"
   },
   "renovate": {
     "extends": [
