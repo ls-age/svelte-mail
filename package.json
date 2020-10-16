@@ -33,7 +33,7 @@
     "juice": "5.2.0"
   },
   "devDependencies": {
-    "@babel/core": "7.12.1",
+    "@babel/core": "7.12.3",
     "@babel/preset-env": "7.12.1",
     "@babel/preset-typescript": "7.12.1",
     "@ls-age/bump-version": "0.2.1",
