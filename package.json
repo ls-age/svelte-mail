@@ -38,7 +38,7 @@
     "@babel/preset-typescript": "7.12.7",
     "@ls-age/bump-version": "0.2.1",
     "@ls-age/eslint-config": "0.9.0",
-    "@types/html-to-text": "1.4.31",
+    "@types/html-to-text": "5.1.2",
     "@typescript-eslint/eslint-plugin": "2.34.0",
     "@typescript-eslint/parser": "2.34.0",
     "eslint": "5.16.0",
