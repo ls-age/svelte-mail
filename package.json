@@ -33,8 +33,8 @@
     "juice": "5.2.0"
   },
   "devDependencies": {
-    "@babel/core": "7.13.1",
-    "@babel/preset-env": "7.13.5",
+    "@babel/core": "7.13.8",
+    "@babel/preset-env": "7.13.8",
     "@babel/preset-typescript": "7.13.0",
     "@ls-age/bump-version": "0.2.1",
     "@ls-age/eslint-config": "0.9.0",
