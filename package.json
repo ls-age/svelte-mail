@@ -29,7 +29,7 @@
   },
   "types": "out/types/index.d.ts",
   "dependencies": {
-    "html-to-text": "5.1.1",
+    "html-to-text": "7.1.1",
     "juice": "5.2.0"
   },
   "devDependencies": {
