@@ -46,7 +46,7 @@
     "eslint-plugin-jest": "24.3.6",
     "jest": "27.0.5",
     "jest-junit": "12.2.0",
-    "prettier": "2.3.1",
+    "prettier": "2.3.2",
     "rollup": "2.52.3",
     "rollup-plugin-babel": "4.4.0",
     "rollup-plugin-node-resolve": "5.2.0",
