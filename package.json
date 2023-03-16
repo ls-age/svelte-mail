@@ -41,7 +41,7 @@
     "@types/html-to-text": "1.4.31",
     "@typescript-eslint/eslint-plugin": "2.34.0",
     "@typescript-eslint/parser": "2.34.0",
-    "eslint": "5.16.0",
+    "eslint": "8.36.0",
     "eslint-config-prettier": "7.2.0",
     "eslint-plugin-jest": "24.4.0",
     "jest": "27.4.7",
